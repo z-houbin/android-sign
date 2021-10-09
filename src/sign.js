@@ -53,12 +53,7 @@ module.exports = {
     const alignedApkFile = apkFile.replace('.apk', '-aligned.apk')
     await exec.exec(`"${zipAlign}"`, [
       '-v', '4',
-      apkFile
-    ])
-
-    await exec.exec(`"cp"`, [
-      apkFile,
-      alignedApkFile
+      apkFile,alignedApkFile
     ])
 
     core.info('Signing APK file')
