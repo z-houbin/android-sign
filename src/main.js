@@ -7,7 +7,7 @@ const signLib = require('./sign')
 const walkSync = require('walk-sync')
 
 function findReleaseFile(releaseDir) {
-  return walkSync(releaseDir, {globs: ['**/*.apk']})
+  return walkSync(releaseDir, {globs: ['**/release/*-zip.apk']})
 }
 
 async function run() {
