@@ -52,7 +52,6 @@ module.exports = {
     // Align the apk file
     const alignedApkFile = apkFile.replace('.apk', '-aligned.apk')
     await exec.exec(`"${zipAlign}"`, [
-      '-c',
       '-v', '4',
       apkFile
     ])
