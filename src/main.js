@@ -1,6 +1,5 @@
 const core = require('@actions/core')
-const fs = require('fs')
-const files = require('files')
+const fs = require('fs-extra')
 const path = require('path')
 
 const signLib = require('./sign')
@@ -45,8 +44,8 @@ async function run() {
           }
           let destPath = path.join(output, signedReleaseFile.split(/(\\|\/)/g).pop() || releaseFile)
           core.info('copy ' + signedReleaseFile + ' to ' + destPath)
-          fs.copyFileSync(signedReleaseFile, destPath)
-          core.info('copy apk1 ' + files.exists(signedReleaseFile) + ' apk2 ' + files.exists(destPath))
+          fs.copySync(signedReleaseFile, destPath)
+          core.info('copy apk1 ' + fs.pathExistsSync(signedReleaseFile) + ' apk2 ' + fs.pathExistsSync(destPath))
         } else {
           core.error('No release file (.apk or .aab) could be found. Abort.')
           core.setFailed('No release file (.apk or .aab) could be found.')
