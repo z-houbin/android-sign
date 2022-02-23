@@ -20,7 +20,7 @@
     "@actions/exec": "^1.0.4",
     "@actions/io": "^1.0.2",
     "@types/bluebird": "^3.5.36",
-    "fs-extra": "^10.0.0",
+    "fs-extra": "^10.0.1",
     "walk-sync": "^3.0.0"
   },
   "devDependencies": {
