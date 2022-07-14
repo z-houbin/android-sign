@@ -24,7 +24,7 @@
     "walk-sync": "^3.0.0"
   },
   "devDependencies": {
-    "@types/node": "^14.10.0",
+    "@types/node": "^18.0.4",
     "js-yaml": "^3.14.0"
   }
 }
